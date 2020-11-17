@@ -1,7 +1,7 @@
 #include <SR04.h>
 
 
-SR04 hc(11, 12); //initialisation class HCSR04 (trig pin , echo pin)
+SR04 hc(11, 12); //initialisation class HCSR04 (echo pin , trig pin)
 
 void setup()
 {
@@ -10,8 +10,6 @@ void setup()
 
 void loop()
 {
-  hc.Ping();
-  long dist = hc.getDistance();
- 
+  long dist = hc.Distance(); 
   Serial.println( dist );  //return current distance (cm) in serial
 }
